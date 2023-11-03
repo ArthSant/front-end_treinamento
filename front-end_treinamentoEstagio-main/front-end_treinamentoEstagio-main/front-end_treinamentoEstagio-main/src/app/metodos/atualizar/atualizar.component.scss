@@ -1,0 +1,60 @@
+.meuFormulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+.instruction{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: red;  
+}
+
+.title {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-size: 15px;
+font-weight: bold;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20px;
+padding: 10px;
+color: black;
+border: 2px solid #f0f0f0;
+border-radius: 5px;
+text-transform: uppercase;
+width: 40%;
+}
+
+
+.btn-submit {
+  font-size: 0.9rem;
+  margin-top: 50px;
+  float: right;
+  text-transform: uppercase;
+
+}
+
+mat-form-field {
+ margin: 5px;
+}
+
+.search-bar,.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.bar{
+ padding: 10px;
+ margin-right: 5px;
+ border-radius: 10px;
+ width: 250px;
+}

@@ -1,0 +1,30 @@
+<div class="search-bar">
+    <input type="text"  #cpf class="bar" placeholder="Digite o CPF" pattern="[0-9]*"  minlength="11"    maxlength="11">
+    <button mat-raised-button  (click)="onSubmit(cpf.value)" >Pesquisar</button>
+</div>
+
+  <div class="info" >
+
+    <mat-accordion *ngIf="mostrarUsuario">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong>{{cpfUser}}</strong>
+          </mat-panel-title>
+          <mat-panel-description>
+            {{panelOpenState ? 'fechar' : 'expandir'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+            <table>
+                <tr>
+                  <strong>Nome:</strong> <li>{{nome}}</li>
+                  <strong>Data de Nascimento:</strong> <li>{{data}}</li>
+                </tr>
+            </table>
+      </mat-expansion-panel>
+    </mat-accordion>
+      
+</div>
+
+

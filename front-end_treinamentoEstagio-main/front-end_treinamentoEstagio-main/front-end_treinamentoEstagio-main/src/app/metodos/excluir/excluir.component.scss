@@ -1,0 +1,13 @@
+.search-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.bar{
+   padding: 10px;
+   margin-right: 5px;
+   border-radius: 10px;
+   width: 250px;
+}

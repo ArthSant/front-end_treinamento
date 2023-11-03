@@ -1,0 +1,80 @@
+  <h2 class="title" >digite o cpf do usuário</h2>
+  <p class="instruction"><strong>Obs.Digite o cpf do usuário e apenas os campos que deseja alterar</strong> </p>
+  <div class="search-bar">
+    <input type="text"  #cpf class="bar" placeholder="Digite o CPF" pattern="[0-9]*"  minlength="11"    maxlength="11">
+    <button mat-raised-button  (click)="encontrar(cpf.value)" >Pesquisar</button>
+</div>
+
+<div class="meuFormulario">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" *ngIf="mostrarFormulario" >
+
+
+  <table class="campos">
+
+
+    <tr class="line-1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input formControlName="nome" matInput name="nome" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Sobrenome</mat-label>
+        <input formControlName="sobrenome" matInput name="sobrenome" />
+      </mat-form-field>
+    </tr>
+
+    <tr class="line-2">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Data de Nascimento</mat-label>
+        <input name="data" matInput type="date" formControlName="data" placeholder="Ex. fulano@email.com" />
+      </mat-form-field>
+    </tr>
+
+    <tr class="line-3">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" name="email" type="email" placeholder="Ex. fulano@email.com" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>CEP</mat-label>
+        <input name="cep" matInput formControlName="cep" maxlength="8" (blur)="consultarCEP($event,formulario)" />
+      </mat-form-field>
+    </tr>
+
+    <tr class="line-4">
+      <mat-form-field class="example-full-width">
+        <mat-label>Rua</mat-label>
+        <input matInput name="rua" formControlName="rua" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Número</mat-label>
+        <input matInput formControlName="numero" placeholder="Ex. 400" name="numero" />
+      </mat-form-field>
+    </tr>
+
+    <tr class="line-5">
+      <mat-form-field class="example-full-width">
+        <mat-label>Bairro</mat-label>
+        <input matInput formControlName="bairro" name="bairro" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Cidade</mat-label>
+        <input name="cidade" matInput formControlName="cidade" placeholder="Ex. Belo Horizonte" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>UF</mat-label>
+        <input matInput formControlName="uf" placeholder="Ex. MG" name="uf" />
+      </mat-form-field>
+    </tr>
+  </table>
+
+  <button type="submit" mat-raised-button class="btn-submit">Atualizar usuário</button>
+</form>
+</div>

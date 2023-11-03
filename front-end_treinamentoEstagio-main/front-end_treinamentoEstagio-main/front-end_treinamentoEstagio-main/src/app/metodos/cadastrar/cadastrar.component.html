@@ -1,0 +1,94 @@
+<h2 class="title" >Preencha o Formulário</h2>
+
+
+<div class="meuFormulario">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
+
+  <table class="campos">
+    <tr class="line-1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome" name="nome"/>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput formControlName="sobrenome" name="sobrenome" />
+      </mat-form-field>
+    </tr>
+
+
+    <tr class="line-2">
+      <mat-form-field class="example-full-width">
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf" minlength="11" maxlength="11"  name="cpf" pattern="[0-9]*" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Data de Nascimento</mat-label>
+        <input
+          name="data"
+          matInput
+          formControlName="data"
+          type="date"
+          placeholder="Ex. fulano@email.com"
+        />
+      </mat-form-field>
+    </tr>
+
+    <tr class="line-3">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Ex. ex@exemplo.com" type="email"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>CEP</mat-label>
+        <input
+          name = "cep"
+          matInput
+          formControlName="cep"
+          maxlength="8"
+          (blur)="consultarCEP($event,formulario)"
+        />
+      </mat-form-field>
+    </tr>
+
+    <tr class="line-4">
+      <mat-form-field class="example-full-width">
+        <mat-label>Rua</mat-label>
+        <input matInput formControlName="rua"  name="rua" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Número</mat-label>
+        <input matInput formControlName="numero" placeholder="Ex. 400" name="numero"/>
+      </mat-form-field>
+    </tr>
+
+    <tr class="line-5">
+      <mat-form-field class="example-full-width">
+        <mat-label>Bairro</mat-label>
+        <input matInput formControlName="bairro" name="bairro"/>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Cidade</mat-label>
+        <input
+          name="cidade"
+          matInput
+          formControlName="cidade"
+          placeholder="Ex. Belo Horizonte"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>UF</mat-label>
+        <input matInput formControlName="uf" placeholder="Ex. MG" name="uf" />
+      </mat-form-field>
+    </tr>
+  </table>
+
+  <button type="submit" mat-raised-button class="btn-submit">Salvar Cadastro</button>
+</form>
+</div>
+
